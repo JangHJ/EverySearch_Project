@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chooseschool_afterlogin"
+    android:background="@drawable/bg">
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="30px"
+        android:layout_height="56px"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="384dp"
+        android:layout_marginRight="384dp"
+        android:layout_marginBottom="694dp"
+        android:background="@drawable/ic_backbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="156dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="78dp"
+
+
+            android:layout_gravity="center"
+            android:fontFamily="@font/notosanscjkkrmedium"
+            android:text="학교를 선택하세요."
+            android:textColor="#000000"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/NextBtn"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="180dp"
+            android:background="@drawable/ic_textbox"
+            android:fontFamily="@font/notosanskrregular"
+            android:gravity="center|left|center_vertical"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:text="대학명 입력"
+            android:textColor="#999999"
+            android:textSize="17dp" />
+
+
+    </LinearLayout>>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

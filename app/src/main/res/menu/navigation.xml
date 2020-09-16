@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/id_settings"
+        android:icon="@drawable/ic_profileicon"
+        android:title="'이서연'님 반갑습니다." />
+    <item
+        android:id="@+id/school_settings"
+        android:icon="@drawable/ic_schoolicon"
+        android:title="서울여자대학교"/>
+    <item
+        android:id="@+id/home_settings"
+        android:icon="@drawable/ic_homeicon"
+        android:title="홈"/>
+    <item
+        android:id="@+id/bookmark_settings"
+        android:icon="@drawable/ic_bookmarkicon"
+        android:title="즐겨찾기"/>
+    <item
+        android:id="@+id/orgsearch_settings"
+        android:icon="@drawable/ic_orgsearchicon"
+        android:title="부서별 검색하기" />
+</menu>
