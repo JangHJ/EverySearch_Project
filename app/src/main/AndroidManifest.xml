@@ -28,12 +28,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".searchResult" />
-        <activity
-            android:name=".navigation"
+        <!--<activity
+            android:name=".navigationreplace"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />-->
         <activity android:name=".mainsearch" />
-        <activity android:name=".schoolLogin" />
+        <!--<activity android:name=".chooseschool_afterlogin" />-->
         <activity android:name=".findschoolActivity" />
         <activity android:name=".MainActivity" />
     </application>
