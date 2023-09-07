@@ -33,18 +33,17 @@ class searchResult : AppCompatActivity() {
         var txtName = "";
         //val txtName = intent.getStringExtra(mainsearch.word)
 
-        // 검색 방법을 확인합니다.
+        // 검색 방법을 확인
         val searchType = intent.getStringExtra("searchType")
 
         // "searchType" 값이 없는 경우 예외 처리
         if (searchType == null) {
-            // "searchType" 값이 없을 때의 처리를 여기에 추가하세요.
+            // "searchType" 값이 없을 때의 처리를 여기에 추가
             return
         }
 
-        // "searchType" 값에 따라서 txtName을 설정합니다.
-
         // 선택 항목 검색인 경우
+        // "searchType" 값에 따라서 txtName을 설정
         if (searchType == "selectedSearch") {
             val selectedSchl = intent.getStringExtra("selectedSchl")
             val selectedDep = intent.getStringExtra("selectedDep")
@@ -92,8 +91,6 @@ class searchResult : AppCompatActivity() {
                             jArray.getJSONObject(i).getString("즐겨찾기")
                         )
                     )
-
-
                 }
                 else if(jArray.getJSONObject(i).getString("부서").contains(editText)){
                     list.add(
@@ -160,8 +157,6 @@ class searchResult : AppCompatActivity() {
                         )
                     )
                 }
-
-
             }
             // 어댑터를 업데이트하여 변경된 데이터를 화면에 표시
             adapter.notifyDataSetChanged()
