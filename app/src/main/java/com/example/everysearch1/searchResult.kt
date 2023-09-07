@@ -165,6 +165,8 @@ class searchResult : AppCompatActivity() {
 
 
             }
+            // 어댑터를 업데이트하여 변경된 데이터를 화면에 표시
+            adapter.notifyDataSetChanged()
         }
         AddArray(txtName)
         autoCompleteTextView2.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->

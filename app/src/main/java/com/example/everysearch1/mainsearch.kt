@@ -63,8 +63,7 @@ class mainsearch : AppCompatActivity() {
         //버튼 클릭이벤트 함수
         editword.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                nextIntent2.putExtra(word,editword.text.toString())
-
+                nextIntent2.putExtra("searchKeyword", editword.text.toString())
                 nextIntent2.putExtra("searchType", "textSearch")
                 startActivity(nextIntent2)
 
@@ -83,6 +82,7 @@ class mainsearch : AppCompatActivity() {
             startActivity(nexIntent2)
             overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_side_out_left)
         }
+
         button5.setOnClickListener{
             val nexIntent3 = Intent(this, navigationreplace()::class.java)
             startActivity(nexIntent3)
