@@ -122,13 +122,27 @@ class orgSearch : AppCompatActivity() {
 
         }
 
-        srchBtn.setOnClickListener{
-            Toast.makeText(this,keyword,Toast.LENGTH_SHORT).show()
+        srchBtn.setOnClickListener {
+            Toast.makeText(this, keyword, Toast.LENGTH_SHORT).show()
+            //startActivity(searchIntent)
+
+            // 선택된 항목들을 추출합니다.
+            val selectedSchl = schlSpinner.selectedItem.toString()
+            val selectedDep = depSpinner.selectedItem.toString()
+            val selectedTeam = teamSpinner.selectedItem.toString()
+
+            // 검색 결과 화면으로 이동하면서 선택된 항목들을 전달합니다.
+            val searchIntent = Intent(this, searchResult::class.java)
+            searchIntent.putExtra("selectedSchl", selectedSchl)
+            searchIntent.putExtra("selectedDep", selectedDep)
+            searchIntent.putExtra("selectedTeam", selectedTeam)
+            searchIntent.putExtra("searchType", "selectedSearch")
             startActivity(searchIntent)
         }
+
         button.setOnClickListener{
-            //val nexIntent = Intent(this, mainsearch()::class.java)
-           // startActivity(nexIntent)
+            val nexIntent2 = Intent(this, mainsearch()::class.java)
+            startActivity(nexIntent2)
             overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right)
         }
         button5.setOnClickListener{

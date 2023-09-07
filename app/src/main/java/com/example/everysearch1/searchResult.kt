@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.main.Search
 import com.example.main.SearchAdapter
@@ -29,12 +30,41 @@ class searchResult : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         val intent = intent ?: return
-        var txtName = intent.getStringExtra(mainsearch.word)
+        var txtName = "";
+        //val txtName = intent.getStringExtra(mainsearch.word)
+
+        // 검색 방법을 확인합니다.
+        val searchType = intent.getStringExtra("searchType")
+
+        // "searchType" 값이 없는 경우 예외 처리
+        if (searchType == null) {
+            // "searchType" 값이 없을 때의 처리를 여기에 추가하세요.
+            return
+        }
+
+        // "searchType" 값에 따라서 txtName을 설정합니다.
+
+        // 선택 항목 검색인 경우
+        if (searchType == "selectedSearch") {
+            val selectedSchl = intent.getStringExtra("selectedSchl")
+            val selectedDep = intent.getStringExtra("selectedDep")
+            val selectedTeam = intent.getStringExtra("selectedTeam")
+
+            // 선택된 항목 정보를 화면에 표시
+            editText.text = selectedTeam
+            txtName = selectedTeam
+        }
+        // 텍스트 검색인 경우
+        else if (searchType == "textSearch") {
+            val searchKeyword = intent.getStringExtra("searchKeyword")
+
+            // 검색 키워드를 화면에 표시
+            editText.text = searchKeyword
+            txtName = searchKeyword
+        }
 
 
-        editText.text=autoCompleteTextView2.text
-
-
+        //editText.text=autoCompleteTextView2.text
 
         val assetManager = resources.assets
         val inputStream = assetManager.open("Find.json")

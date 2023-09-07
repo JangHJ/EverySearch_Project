@@ -64,7 +64,10 @@ class mainsearch : AppCompatActivity() {
         editword.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
                 nextIntent2.putExtra(word,editword.text.toString())
+
+                nextIntent2.putExtra("searchType", "textSearch")
                 startActivity(nextIntent2)
+
                 overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_side_out_left)
                 return@OnKeyListener true
             }

@@ -59,10 +59,9 @@ companion object{
             callIcon.setOnClickListener(this)
         }
 
-        override fun onClick(v: View?) {//Intent(Intent.ACTION_DIAL, Uri.parse(callNum))
-
-            val intent = Intent(Intent.ACTION_DIAL,Uri.parse(callNum))
-            //startactivity(ctx,intent) 왜 안되냐..
+        override fun onClick(v: View?) {
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$callNum"))
+            ctx.startActivity(intent)
         }
 
     }

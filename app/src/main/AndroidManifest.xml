@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name=".chooseschool_afterlogin"></activity>
+        <activity android:name=".chooseschool_afterlogin"/>
         <activity android:name=".navigationreplace" />
         <activity android:name=".login" />
         <activity android:name=".bookmark" />
