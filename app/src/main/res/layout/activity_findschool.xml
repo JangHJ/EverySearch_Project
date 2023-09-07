@@ -53,11 +53,6 @@
             android:layout_marginTop="10pt"
             app:srcCompat="@drawable/ic_listline" />
 
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="다음화면보기" />
     </LinearLayout>
 
 </LinearLayout>

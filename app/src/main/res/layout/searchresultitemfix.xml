@@ -4,48 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="800px"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
         android:background="@drawable/contactbox"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="50dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|left"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="50dp">
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_bookmark_2"
+                android:gravity="center" />
 
-                <Button
-                    android:id="@+id/button15"
-                    android:layout_width="85px"
-                    android:layout_height="85px"
-                    android:layout_marginRight="80dp"
-                    android:background="@drawable/ic_bookmark_2"
-                    android:gravity="center" />
-
-                <Button
-                    android:id="@+id/callIcon"
-                    android:layout_width="171px"
-                    android:layout_height="171px"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_callbutton"
-                    android:gravity="center" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/callIcon"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="75dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_callbutton"
+                android:gravity="center" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -68,8 +65,9 @@
                 android:textSize="25dp" />
         </LinearLayout>
 
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
@@ -113,8 +111,8 @@
         </LinearLayout>
 
         <GridView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         </GridView>
     </LinearLayout>
