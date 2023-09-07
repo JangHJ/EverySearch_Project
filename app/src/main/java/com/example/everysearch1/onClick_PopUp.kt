@@ -18,9 +18,9 @@ class onClick_PopUp : AppCompatActivity() {
 
         intent = getIntent()
 
-        val cd = intent.getStringExtra("code")
-        val nos = intent.getStringExtra("numOfStd")
-        pop_txt = (cd + "에 재적 중인 학생은 " + nos + "명입니다")
+        val nos1 = intent.getStringExtra("nameOfScl")
+        val nos2 = intent.getStringExtra("numOfStd")
+        pop_txt = (nos1 + "에 재적 중인 학생은 " + nos2 + "명입니다")
 
         tv_numOfStd.setText(pop_txt)
         btn_ok.setOnClickListener()
