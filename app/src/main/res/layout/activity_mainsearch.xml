@@ -41,9 +41,9 @@
             android:layout_height="152px"
             android:fontFamily="@font/notosanscjkkrmedium"
             android:gravity="center"
-            android:text="1학기 개강"
+            android:text="학사 일정"
             android:textColor="#000000"
-            android:textSize="22dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/textView_date"
@@ -52,7 +52,7 @@
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/notosanscjkkrdemilight"
             android:gravity="center"
-            android:text="3월 2일(월)"
+            android:text="현재 날짜"
             android:textColor="#00BA75"
             android:textSize="12dp" />
 
