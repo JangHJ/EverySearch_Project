@@ -59,7 +59,6 @@ class mainsearch : AppCompatActivity() {
             }
         }//
 
-
         //버튼 클릭이벤트 함수
         editword.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER) {

@@ -63,9 +63,7 @@ class searchResult : AppCompatActivity() {
             txtName = searchKeyword
         }
 
-
         //editText.text=autoCompleteTextView2.text
-
         val assetManager = resources.assets
         val inputStream = assetManager.open("Find.json")
         val jsonString = inputStream.bufferedReader().use {
