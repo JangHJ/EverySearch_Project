@@ -71,10 +71,10 @@ class mainsearch : AppCompatActivity() {
             else
                 false
         })
-        button7.setOnClickListener(){
+        /*button7.setOnClickListener(){
             val nextIntent = Intent(this, login()::class.java)
             startActivity(nextIntent)
-        }
+        }*/
         button.setOnClickListener{
             val nexIntent2 = Intent(this, orgSearch()::class.java)
             startActivity(nexIntent2)

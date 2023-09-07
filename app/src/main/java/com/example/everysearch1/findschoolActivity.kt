@@ -54,10 +54,10 @@ companion object{
         button2.setOnClickListener(){
             finish()
         }
-        button10.setOnClickListener{
+        /*button10.setOnClickListener{
             val nextIntent = Intent(this, mainsearch()::class.java)
             startActivity(nextIntent)
-        }
+        }*/
     }
 
 }

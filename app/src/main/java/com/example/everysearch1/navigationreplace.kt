@@ -4,11 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.button8
 import kotlinx.android.synthetic.main.activity_mainsearch.*
 import kotlinx.android.synthetic.main.activity_mainsearch.button
 import kotlinx.android.synthetic.main.activity_mainsearch.button5
-import kotlinx.android.synthetic.main.activity_mainsearch.button7
 import kotlinx.android.synthetic.main.activity_navigationreplace.*
 
 class navigationreplace : AppCompatActivity() {
