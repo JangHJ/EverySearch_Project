@@ -87,10 +87,10 @@ class mainsearch : AppCompatActivity() {
     }
 
     private fun displayDateAndTask() {
-        // 현재 날짜를 "MMMM dd, yyyy" 형식의 문자열로 포맷팅
-        val currentDateStr = SimpleDateFormat("MMMM dd, yyyy", Locale.US).format(Date())
-        Log.d("CurrentDate111111111", currentDateStr)
         val dateSet = SimpleDateFormat("MMMM dd, yyyy", Locale.US) // 월과 일, 연도까지 출력
+        // 현재 날짜를 "MMMM dd, yyyy" 형식의 문자열로 포맷팅
+        val currentDateStr = dateSet.format(Date())
+        Log.d("CurrentDate111111111", currentDateStr)
         val currentDate = dateSet.parse(currentDateStr) ?: Date() // 현재 날짜
         val dateText = SimpleDateFormat("MM월 dd일", Locale.KOREA).format(currentDate)
 
