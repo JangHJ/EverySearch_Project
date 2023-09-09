@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         NextBtn.setOnClickListener(){
             val nextIntent = Intent(this, findschoolActivity()::class.java)
             startActivity(nextIntent)
+            finish()
         }
     }
 
