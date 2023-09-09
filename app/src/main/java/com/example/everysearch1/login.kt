@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class login : AppCompatActivity() {
     var login_suc : Boolean ?= false
-    var isLogin : Boolean ?= false
 
     private var auth : FirebaseAuth? = null
 
@@ -40,6 +39,10 @@ class login : AppCompatActivity() {
             //로그인이 된 상태에서 학교바꾸기 버튼(button20)을 누르면 activity_chooseschool_afterlogin(로그인 후 버전 학교 선택)로 가야하고,
             //로그인이 되지 않은 상태에서 학교바꾸기 버튼(button20)을 누르면 activity_main(=로그인 전 버전 학교 선택)로 가야하고
         }
+        //회원가입 버튼 클릭 시
+        button12.setOnClickListener{
+
+        }
     }
     private fun emailLogin() {
         if (editText6.text.toString().isNullOrEmpty() || editText5.text.toString().isNullOrEmpty()) {
@@ -60,10 +63,8 @@ class login : AppCompatActivity() {
     }
     private fun moveMainPage(user: FirebaseUser?) {
         if (user != null) {
-            val after_Intent = Intent(this, chooseschool_afterlogin()::class.java)
-            isLogin = true
-            after_Intent.putExtra("isLogin", isLogin!!)
-            startActivity(after_Intent)
+            /*val after_Intent = Intent(this, navigationreplace()::class.java)
+            startActivity(after_Intent)*/
             finish()
         }
     }
