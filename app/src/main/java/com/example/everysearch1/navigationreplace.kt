@@ -1,5 +1,6 @@
 package com.example.everysearch1
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,10 +24,12 @@ class navigationreplace : AppCompatActivity() {
         setContentView(R.layout.activity_navigationreplace)
 
         val name = findViewById<TextView>(R.id.textView2)
+        val shlname = findViewById<TextView>(R.id.textView3)
         val loginbtn = findViewById<Button>(R.id.button4)
         auth = FirebaseAuth.getInstance() // Firebase 인증 객체 초기화
         val currentUser = auth?.currentUser
 
+        shlname.text = loadAutoCompleteText()
         if(currentUser != null){
             name.text = currentUser?.email
             loginbtn.text = "로그아웃"
@@ -63,7 +66,7 @@ class navigationreplace : AppCompatActivity() {
             finish()
         }
         button3.setOnClickListener{
-            val nextIntent5 = Intent(this, chooseschool_afterlogin()::class.java)
+            val nextIntent5 = Intent(this, findschoolActivity()::class.java)
             startActivity(nextIntent5)
             finish()
         }
@@ -78,5 +81,8 @@ class navigationreplace : AppCompatActivity() {
             }
         }
     }
-
+    fun Context.loadAutoCompleteText(): String {
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("schoolName", "") ?: ""
+    }
 }

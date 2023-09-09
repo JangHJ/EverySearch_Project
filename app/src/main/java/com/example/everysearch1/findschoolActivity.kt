@@ -1,5 +1,6 @@
 package com.example.everysearch1
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,7 +48,8 @@ companion object{
                                                                              id: Long ->
             val selectedItem = parent.getItemAtPosition(position).toString()
             val nextIntent = Intent(this, mainsearch()::class.java)
-            nextIntent.putExtra("schoolName", autoComplete.text.toString())
+            //nextIntent.putExtra("schoolName", autoComplete.text.toString())
+            saveAutoCompleteText(autoComplete.text.toString())
             startActivity(nextIntent)
         }
 
@@ -59,6 +61,11 @@ companion object{
             startActivity(nextIntent)
         }*/
     }
-
+    fun Context.saveAutoCompleteText(text: String) {
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("schoolName", text)
+        editor.apply()
+    }
 }
 

@@ -1,5 +1,6 @@
 package com.example.everysearch1
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -27,13 +28,13 @@ class mainsearch : AppCompatActivity() {
     var numOfStd: String? = null
 
     var itemList: ArrayList<HashMap<String, String>>? = null
-    var temp: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mainsearch)
         val nextIntent2 = Intent(this, searchResult()::class.java)
-        nameOfScl = intent.getStringExtra("schoolName")
+        //nameOfScl = intent.getStringExtra("schoolName")
+        nameOfScl = loadAutoCompleteText();
         nameOfScl?.let { Log.d("대학교이름 나오는지 테스트", it) }
         // 날짜와 학사일정 표시
         displayDateAndTask()
@@ -66,22 +67,10 @@ class mainsearch : AppCompatActivity() {
         button9.setOnClickListener {
             val popIntent = Intent(this, onClick_PopUp()::class.java)
 
-            val serviceKey = "Lb28IpzH6noVYNF%2FKeXpFqSgMOgfI0ClnD7w7atIOLyho8mYTB2wfBcEa%2BDvokxHwbYBBr0lEC0emJQ7ibd%2BUg%3D%3D"
-            val pageNo = ""
-            val numOfRows = ""
-            val schlId = "0000126"
-            val svyYr = "2019"
-
-            getNumofStdList(serviceKey, pageNo, numOfRows, schlId, svyYr)
-
-            numOfStd = itemList.toString()
-            // code = dataHashMap!!.get("schlKrnNm")
-
             popIntent.putExtra("nameOfScl", nameOfScl)
-            popIntent.putExtra("numOfStd", numOfStd)
-            popIntent.putExtra("temp", temp)
+            //popIntent.putExtra("temp", temp)
 
-            Toast.makeText(this, temp, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, temp, Toast.LENGTH_SHORT).show()
             startActivity(popIntent)
         }
     }
@@ -141,12 +130,12 @@ class mainsearch : AppCompatActivity() {
     }
 
 
-    private fun getNumofStdList(serviceKey: String,
+    /*private fun getNumofStdList(serviceKey: String,
                                 pageNo: String,
                                 numOfRows: String,
                                 schlld: String,
                                 svyYr: String) {
-        val request = getRequestUrl(serviceKey, pageNo, numOfRows, schlld, svyYr)
+        //val request = getRequestUrl(serviceKey, pageNo, numOfRows, schlld, svyYr)
         Log.d("테스트테스트", request.toString())
         val client = OkHttpClient()
 
@@ -181,9 +170,9 @@ class mainsearch : AppCompatActivity() {
                 }
             }
         })
-    }
+    }*/
 
-    private fun getRequestUrl(serviceKey: String,
+    /*private fun getRequestUrl(serviceKey: String,
                               pageNo: String,
                               numOfRows: String,
                               schlld: String,
@@ -205,7 +194,7 @@ class mainsearch : AppCompatActivity() {
                 "Content-Type",
                 "application/x-www-form-urlencoded; text/xml; charset=utf-8")
             .build()
-    }
+    }*/
 
     private fun getValueFromKey(element: Element, key: String): String {
         val nodeList = element.getElementsByTagName(key)
@@ -216,5 +205,10 @@ class mainsearch : AppCompatActivity() {
             }
         }
         return ""
+    }
+
+    fun Context.loadAutoCompleteText(): String {
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("schoolName", "") ?: ""
     }
 }
