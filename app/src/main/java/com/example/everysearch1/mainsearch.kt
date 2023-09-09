@@ -23,7 +23,7 @@ class mainsearch : AppCompatActivity() {
     }
 
     // 팝업창에 쓰이게 될 데이터
-    var code: String? = null
+    var nameOfScl: String? = null
     var numOfStd: String? = null
 
     var itemList: ArrayList<HashMap<String, String>>? = null
@@ -33,7 +33,8 @@ class mainsearch : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mainsearch)
         val nextIntent2 = Intent(this, searchResult()::class.java)
-
+        nameOfScl = intent.getStringExtra("schoolName")
+        nameOfScl?.let { Log.d("대학교이름 나오는지 테스트", it) }
         // 날짜와 학사일정 표시
         displayDateAndTask()
 
@@ -76,7 +77,7 @@ class mainsearch : AppCompatActivity() {
             numOfStd = itemList.toString()
             // code = dataHashMap!!.get("schlKrnNm")
 
-            popIntent.putExtra("code", code)
+            popIntent.putExtra("nameOfScl", nameOfScl)
             popIntent.putExtra("numOfStd", numOfStd)
             popIntent.putExtra("temp", temp)
 
@@ -146,6 +147,7 @@ class mainsearch : AppCompatActivity() {
                                 schlld: String,
                                 svyYr: String) {
         val request = getRequestUrl(serviceKey, pageNo, numOfRows, schlld, svyYr)
+        Log.d("테스트테스트", request.toString())
         val client = OkHttpClient()
 
         client.newCall(request).enqueue(object : Callback {
@@ -161,14 +163,10 @@ class mainsearch : AppCompatActivity() {
                 for (n in 0 until nList.length) {
                     val element = nList.item(n) as Element
                     val dataHashMap = HashMap<String, String>()
-                    dataHashMap["indctId"] = getValueFromKey(element, "indctId")
-                    dataHashMap["indctVal1"] = getValueFromKey(element, "indctVal1")
-                    dataHashMap["indctYr"] = getValueFromKey(element, "indctYr")
-                    dataHashMap["schlDivNm"] = getValueFromKey(element, "schlDivNm")
-                    dataHashMap["schlEstbNm"] = getValueFromKey(element, "schlEstbNm")
-                    dataHashMap["schlId"] = getValueFromKey(element, "schlId")
-                    dataHashMap["schlKrnNm"] = getValueFromKey(element, "schlKrnNm")
-                    dataHashMap["svyYr"] = getValueFromKey(element, "svyYr")
+                    dataHashMap["schlId"] = getValueFromKey(element, "schlId") //학교아이디
+                    dataHashMap["schlKrnNm"] = getValueFromKey(element, "schlKrnNm") //학교한글명
+                    dataHashMap["indctVal1"] = getValueFromKey(element, "indctVal1") //재적학생
+                    //dataHashMap["svyYr"] = getValueFromKey(element, "svyYr")
                     itemList!!.add(dataHashMap)
                 }
                 runOnUiThread {
@@ -191,7 +189,7 @@ class mainsearch : AppCompatActivity() {
                               schlld: String,
                               svyYr: String) : Request {
 
-        var url = "http://openapi.academyinfo.go.kr/openapi/service/rest/StudentService/getComparisonEnrolledStudentCrntSt"
+        var url = "http://openapi.academyinfo.go.kr/openapi/service/rest/StudentService/getEnrolledStudentCrntSt"
         var httpUrl = HttpUrl.parse(url)
             ?.newBuilder()
             ?.addEncodedQueryParameter("serviceKey", serviceKey)
