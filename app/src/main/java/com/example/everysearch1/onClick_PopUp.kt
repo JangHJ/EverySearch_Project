@@ -1,5 +1,6 @@
 package com.example.everysearch1
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
@@ -16,16 +17,18 @@ class onClick_PopUp : AppCompatActivity() {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_pop)
 
-        intent = getIntent()
-
-        val nos1 = intent.getStringExtra("nameOfScl")
-        val nos2 = ""
-        pop_txt = (nos1 + "에 재적 중인 학생은 " + nos2 + "명입니다")
+        val schlname = loadAutoCompleteText()
+        val stdnum = ""
+        pop_txt = (schlname + "에 재적 중인 학생은 " + stdnum + "명입니다")
 
         tv_numOfStd.setText(pop_txt)
         btn_ok.setOnClickListener()
         {
             finish()
         }
+    }
+    fun Context.loadAutoCompleteText(): String {
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("schoolName", "") ?: ""
     }
 }

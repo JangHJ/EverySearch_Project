@@ -66,11 +66,6 @@ class mainsearch : AppCompatActivity() {
 
         button9.setOnClickListener {
             val popIntent = Intent(this, onClick_PopUp()::class.java)
-
-            popIntent.putExtra("nameOfScl", nameOfScl)
-            //popIntent.putExtra("temp", temp)
-
-            //Toast.makeText(this, temp, Toast.LENGTH_SHORT).show()
             startActivity(popIntent)
         }
     }
