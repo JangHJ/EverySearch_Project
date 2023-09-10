@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textSchlname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
@@ -51,7 +51,7 @@
         android:layout_marginRight="176dp"
         android:fontFamily="@font/notosanscjkkrdemilight"
         android:gravity="center"
-        android:text="통합로그인"
+        android:text="회원가입"
         android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
         android:layout_height="122px"
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="292dp"
         android:layout_marginEnd="99dp"
         android:layout_marginRight="99dp"
         android:background="@drawable/ic_idbox"
@@ -100,45 +100,10 @@
         android:id="@+id/btnSignup"
         android:layout_width="410.875px"
         android:layout_height="122px"
-        android:layout_marginTop="476dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/ic_miniregister"
-        app:layout_constraintBottom_toTopOf="@+id/btnChange"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="410.875px"
-        android:layout_height="122px"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="476dp"
-        android:layout_marginBottom="150dp"
-        android:background="@drawable/ic_minilogin"
-        app:layout_constraintBottom_toTopOf="@+id/btnChange"
-        app:layout_constraintEnd_toStartOf="@+id/btnSignup"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnChange"
-        android:layout_width="853px"
-        android:layout_height="109.619px"
-        android:layout_marginStart="161dp"
-        android:layout_marginLeft="161dp"
-        android:layout_marginTop="672dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
-        android:layout_marginBottom="17dp"
-        android:background="@drawable/ic_schoolchangebutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
