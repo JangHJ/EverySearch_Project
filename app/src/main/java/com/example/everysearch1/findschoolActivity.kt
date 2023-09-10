@@ -48,8 +48,7 @@ companion object{
                                                                              id: Long ->
             val selectedItem = parent.getItemAtPosition(position).toString()
             val nextIntent = Intent(this, mainsearch()::class.java)
-            //nextIntent.putExtra("schoolName", autoComplete.text.toString())
-            saveAutoCompleteText(autoComplete.text.toString())
+            saveAutoCompleteText(schlKrnNm)
             startActivity(nextIntent)
         }
 

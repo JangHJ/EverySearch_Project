@@ -44,6 +44,5 @@ class signup : AppCompatActivity() {
                     Toast.makeText(this, "회원가입 실패: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
             }
-
     }
 }
