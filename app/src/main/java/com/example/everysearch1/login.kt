@@ -46,17 +46,12 @@ class login : AppCompatActivity() {
             ?.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Email 로그인 성공", Toast.LENGTH_LONG).show()
-                    moveMainPage(auth?.currentUser)
+                    val nextIntent = Intent(this, navigationreplace()::class.java)
+                    startActivity(nextIntent)
+                    finish()
                 } else {
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
                 }
             }
-    }
-    private fun moveMainPage(user: FirebaseUser?) {
-        if (user != null) {
-            /*val after_Intent = Intent(this, navigationreplace()::class.java)
-            startActivity(after_Intent)*/
-            finish()
-        }
     }
 }

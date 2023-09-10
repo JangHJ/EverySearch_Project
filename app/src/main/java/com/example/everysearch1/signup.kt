@@ -36,13 +36,12 @@ class signup : AppCompatActivity() {
         var password = editPwd.text.toString()
 
         auth?.createUserWithEmailAndPassword(email, password)
-        auth?.signInWithEmailAndPassword(email, password)
             ?.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "회원가입이 완료되었습니다", Toast.LENGTH_LONG).show()
                     finish()
                 } else {
-                    Toast.makeText(this, "회원가입이 실패했습니다", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "회원가입 실패: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
             }
 

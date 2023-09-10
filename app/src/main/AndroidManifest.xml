@@ -36,6 +36,7 @@
         <!--<activity android:name=".chooseschool_afterlogin" />-->
         <activity android:name=".findschoolActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".signup" />
     </application>
 
 </manifest>
