@@ -28,24 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/schlSpinner"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/ic_listbox"
-        android:gravity="center"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/depSpinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -66,18 +48,30 @@
         app:layout_constraintVertical_bias="0.769" />
 
     <Spinner
+        android:id="@+id/schlSpinner"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_listbox"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/depSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
         android:id="@+id/teamSpinner"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginTop="364dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
         android:background="@drawable/ic_listbox"
         android:gravity="center"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,18 +80,13 @@
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
         android:layout_marginBottom="21dp"
         android:background="@drawable/ic_listbox"
         android:gravity="center"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/teamSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -107,12 +96,9 @@
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginTop="484dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
         android:background="@drawable/ic_searchbutton"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -168,6 +154,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_fireball2" />
