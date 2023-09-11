@@ -43,30 +43,30 @@ class onClick_PopUp : AppCompatActivity() {
         try {
             val urlBuilder =
                 StringBuilder("http://openapi.academyinfo.go.kr/openapi/service/rest/StudentService/getComparisonEnrolledStudentCrntSt")
-            urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + serviceKey)
-            urlBuilder.append(
+            urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + serviceKey) /*Service Key*/
+            /*urlBuilder.append(
                 "&" + URLEncoder.encode(
                     "pageNo",
                     "UTF-8"
-                ) + "=" + URLEncoder.encode("1", "UTF-8")
+                ) + "=" + URLEncoder.encode("1", "UTF-8") /*페이지번호*/
             )
             urlBuilder.append(
                 "&" + URLEncoder.encode(
                     "numOfRows",
                     "UTF-8"
-                ) + "=" + URLEncoder.encode("999", "UTF-8")
+                ) + "=" + URLEncoder.encode("999", "UTF-8") /*한 페이지 결과 수*/
+            )*/
+            urlBuilder.append(
+                "&" + URLEncoder.encode(
+                    "svyYr",
+                    "UTF-8"
+                ) + "=" + URLEncoder.encode("2018", "UTF-8") /*공시년도*/
             )
             urlBuilder.append(
                 "&" + URLEncoder.encode(
                     "schlId",
                     "UTF-8"
-                ) + "=" + URLEncoder.encode("0000126", "UTF-8")
-            )
-            urlBuilder.append(
-                "&" + URLEncoder.encode(
-                    "svyYr",
-                    "UTF-8"
-                ) + "=" + URLEncoder.encode("2018", "UTF-8")
+                ) + "=" + URLEncoder.encode("0000126", "UTF-8") /*학교아이디*/
             )
 
             val url = URL(urlBuilder.toString())
